@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============ LOADER ============ -->
+    <section class="loader-screen" data-loader>
+      <div class="loader-panel">
+        <p class="loader-word" data-loader-word>impulse...</p>
+        <div class="loader-stars" aria-hidden="true">
+          <span class="loader-star is-active"></span>
+          <span class="loader-star"></span>
+          <span class="loader-star"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OS SHELL ============ -->
+    <main class="os" data-os aria-live="polite">
+      <div class="os-label" data-os-label>Home</div>
+
+      <div class="window">
+        <div class="titlebar">
+          <button class="back-btn" data-back aria-label="ホームに戻る">←</button>
+          <div class="win-controls">
+            <button class="ctrl-min" data-home title="最小化">—</button>
+            <button class="ctrl-max" title="最大化">□</button>
+            <button class="ctrl-close" data-home title="閉じる">✕</button>
+          </div>
+        </div>
+
+        <div class="win-body">
+          <!-- HOME / DESKTOP -->
+          <section class="view is-active" data-view="home">
+            <div class="desktop">
+              <button class="desktop-icon" data-open="about">
+                <img class="glyph" src="assets/aboutme.png" alt="あばうとみー" />
+                <span>あばうとみー</span>
+              </button>
+              <button class="desktop-icon" data-open="books">
+                <img class="glyph" src="assets/books.png" alt="すきなほん" />
+                <span>すきなほん</span>
+              </button>
+              <button class="desktop-icon" data-open="works">
+                <img class="glyph" src="assets/works.png" alt="わーくす" />
+                <span>わーくす</span>
+              </button>
+              <button class="desktop-icon" data-open="music">
+                <img class="glyph" src="assets/music.png" alt="すきなおんがく" />
+                <span>すきなおんがく</span>
+              </button>
+              <button class="desktop-icon" data-open="contact">
+                <img class="glyph" src="assets/contact.png" alt="こんたくと" />
+                <span>こんたくと</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- ABOUT -->
+          <section class="view" data-view="about">
+            <h1 class="page-title">あばうとみー</h1>
+            <div class="about-text">
+              <p>神山まるごと高専3期生（現在2年生）の嵯峨幸子です。</p>
+              <p>
+                最近すきだった漫画はガールズ・アット・ジ・エッジっていう小説のコミカライズです。
+              </p>
+              <p>2009年12月21日生まれです。</p>
+              <p>
+                映画を人生で3本くらいしかみた事ないことがなかなかに大きい恥だと認識しています。
+              </p>
+              <p>一番すきだった映画はスーサイドファミリーです。</p>
+              <p>
+                最も古い記憶は母親にもらったお菓子を蟻にあげて（反応を見てみたかったので）怒られたことです。
+              </p>
+              <p>去年の秋くらいからのマイブームが絵を描くことです。</p>
+              <p>
+                おおきくなったらエベレストを踏み潰して世界で二番目に高い山に脚光を浴びさせてあげたいです。
+              </p>
+              <p>モノづくり派かコトおこし派かでいうとモノづくり派です。</p>
+            </div>
+          </section>
+
+          <!-- WORKS -->
+          <section class="view" data-view="works">
+            <h1 class="page-title">わーくす</h1>
+            <div class="works-grid" data-works></div>
+            <div class="works-link">
+              <a
+                href="https://github.com/sachi-saiwai"
+                target="_blank"
+                rel="noopener"
+                >→ github.com/sachi-saiwai でもっと見る</a
+              >
+            </div>
+          </section>
+
+          <!-- MUSIC -->
+          <section class="view" data-view="music">
+            <h1 class="page-title">すきなおんがく</h1>
+            <div class="tag-list" data-music></div>
+            <p class="page-foot">指しんどくなってきたのでやめます　まだまだあります</p>
+          </section>
+
+          <!-- BOOKS -->
+          <section class="view" data-view="books">
+            <h1 class="page-title">
+              すきなほん <small>(シリーズは一巻のみ記載)</small>
+            </h1>
+            <div class="tag-list" data-books></div>
+            <p class="page-foot">
+              読んで忘れてるやつとか書けてないやつとか多分もうちょいあります　おすすめ教えて欲しいです
+            </p>
+          </section>
+
+          <!-- CONTACT -->
+          <section class="view" data-view="contact">
+            <h1 class="page-title">こんたくと</h1>
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/kmc2519@kamiyama.ac.jp"
+              method="POST"
+              data-contact-form
+            >
+              <input type="hidden" name="_subject" value="ポートフォリオからのお問い合わせ" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="_honey" style="display: none" />
+
+              <label class="field">
+                <span>おなまえ</span>
+                <input type="text" name="name" placeholder="お名前を入力" required />
+              </label>
+
+              <label class="field">
+                <span>めーる</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="返信先メールアドレス"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span>ごようけん</span>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="お問い合わせの要件を入力"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span>めっせーじ</span>
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="お問い合わせ内容を入力"
+                  required
+                ></textarea>
+              </label>
+
+              <button type="submit" class="send-btn">そうしん</button>
+              <p class="form-status" data-form-status aria-live="polite"></p>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
