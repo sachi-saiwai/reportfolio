@@ -2,26 +2,26 @@
 const WORKS = [
   {
     name: "katatsumuri",
-    url: "https://github.com/sachi-saiwai/katatsumuri",
+    url: "https://katatsumuri.vercel.app/",
     desc: "ブラウザで動くドット絵エディタ。",
     tech: ["React", "JavaScript", "HTML/CSS"],
   },
   {
     name: "nietzsche",
-    url: "https://github.com/sachi-saiwai/nietzsche",
+    url: "https://sachi-saiwai.github.io/nietzsche/",
     desc: "JavaScriptで作ったWebアプリ。",
     tech: ["React", "JavaScript", "HTML/CSS"],
   },
   {
     name: "sushior",
-    url: "https://github.com/sachi-saiwai/sushior",
+    url: "https://sachi-saiwai.github.io/SUSHIOR/",
     desc: "Flutterで作ったクロスプラットフォームアプリ。",
     tech: ["Flutter", "Dart"],
   },
   {
     name: "portfoliogogogo",
-    url: "https://github.com/sachi-saiwai/portfoliogogogo",
-    desc: "Flutter製のポートフォリオアプリ。",
+    url: "https://pgo-p5.com/",
+    desc: "Flutter製のポートフォリオ",
     tech: ["Flutter", "Dart"],
   },
   {
