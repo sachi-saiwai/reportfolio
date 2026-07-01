@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
+    <link rel="icon" type="image/png" href="assets/aboutme.png" />
+    <link rel="apple-touch-icon" href="assets/aboutme.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -60,7 +62,23 @@
             <button class="back-btn" data-back aria-label="ホームに戻る">←</button>
             <div class="win-controls">
               <button class="ctrl-min" data-home title="最小化">—</button>
-              <button class="ctrl-max" data-max title="ウィンドウ表示／最大化">□</button>
+              <button
+                class="ctrl-max"
+                data-max
+                title="ウィンドウ表示／最大化"
+                aria-label="ウィンドウ表示／最大化"
+              >
+                <svg
+                  class="icon-nested"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  aria-hidden="true"
+                >
+                  <rect x="2.5" y="2.5" width="11" height="11" />
+                </svg>
+              </button>
               <button class="ctrl-close" data-home title="閉じる">✕</button>
             </div>
           </div>

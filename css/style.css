@@ -223,6 +223,19 @@ body {
   transform: translateY(-1px);
 }
 
+/* □ ボタン: 入れ子の四角アイコン */
+.win-controls .icon-nested {
+  width: clamp(16px, 2vw, 22px);
+  height: clamp(16px, 2vw, 22px);
+}
+
+.win-controls .icon-nested rect {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  shape-rendering: crispEdges;
+}
+
 .win-controls .ctrl-close:hover {
   background: #ff5fae;
   color: #fff;
