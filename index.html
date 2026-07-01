@@ -29,44 +29,44 @@
     <main class="os" data-os aria-live="polite">
       <div class="os-label" data-os-label>Home</div>
 
-      <div class="window">
-        <div class="titlebar">
-          <button class="back-btn" data-back aria-label="ホームに戻る">←</button>
-          <div class="win-controls">
-            <button class="ctrl-min" data-home title="最小化">—</button>
-            <button class="ctrl-max" title="最大化">□</button>
-            <button class="ctrl-close" data-home title="閉じる">✕</button>
-          </div>
+      <div class="stage">
+        <!-- ============ DESKTOP (背景・常に表示) ============ -->
+        <div class="desktop">
+          <button class="desktop-icon" data-open="about">
+            <img class="glyph" src="assets/aboutme.png" alt="あばうとみー" />
+            <span>あばうとみー</span>
+          </button>
+          <button class="desktop-icon" data-open="books">
+            <img class="glyph" src="assets/books.png" alt="すきなほん" />
+            <span>すきなほん</span>
+          </button>
+          <button class="desktop-icon" data-open="works">
+            <img class="glyph" src="assets/works.png" alt="わーくす" />
+            <span>わーくす</span>
+          </button>
+          <button class="desktop-icon" data-open="music">
+            <img class="glyph" src="assets/music.png" alt="すきなおんがく" />
+            <span>すきなおんがく</span>
+          </button>
+          <button class="desktop-icon" data-open="contact">
+            <img class="glyph" src="assets/contact.png" alt="こんたくと" />
+            <span>こんたくと</span>
+          </button>
         </div>
 
-        <div class="win-body">
-          <!-- HOME / DESKTOP -->
-          <section class="view is-active" data-view="home">
-            <div class="desktop">
-              <button class="desktop-icon" data-open="about">
-                <img class="glyph" src="assets/aboutme.png" alt="あばうとみー" />
-                <span>あばうとみー</span>
-              </button>
-              <button class="desktop-icon" data-open="books">
-                <img class="glyph" src="assets/books.png" alt="すきなほん" />
-                <span>すきなほん</span>
-              </button>
-              <button class="desktop-icon" data-open="works">
-                <img class="glyph" src="assets/works.png" alt="わーくす" />
-                <span>わーくす</span>
-              </button>
-              <button class="desktop-icon" data-open="music">
-                <img class="glyph" src="assets/music.png" alt="すきなおんがく" />
-                <span>すきなおんがく</span>
-              </button>
-              <button class="desktop-icon" data-open="contact">
-                <img class="glyph" src="assets/contact.png" alt="こんたくと" />
-                <span>こんたくと</span>
-              </button>
+        <!-- ============ WINDOW (浮かぶ・ホームでは非表示) ============ -->
+        <div class="window is-hidden" data-window>
+          <div class="titlebar">
+            <button class="back-btn" data-back aria-label="ホームに戻る">←</button>
+            <div class="win-controls">
+              <button class="ctrl-min" data-home title="最小化">—</button>
+              <button class="ctrl-max" data-max title="ウィンドウ表示／最大化">□</button>
+              <button class="ctrl-close" data-home title="閉じる">✕</button>
             </div>
-          </section>
+          </div>
 
-          <!-- ABOUT -->
+          <div class="win-body">
+            <!-- ABOUT -->
           <section class="view" data-view="about">
             <h1 class="page-title">あばうとみー</h1>
             <div class="about-text">
@@ -175,8 +175,30 @@
               <p class="form-status" data-form-status aria-live="polite"></p>
             </form>
           </section>
+          </div>
         </div>
       </div>
+
+      <!-- ============ TASKBAR (Dock) ============ -->
+      <nav class="taskbar" aria-label="ひらいているアプリ">
+        <div class="taskbar-inner">
+          <button class="task-icon" data-open="about" title="あばうとみー">
+            <img src="assets/aboutme.png" alt="あばうとみー" />
+          </button>
+          <button class="task-icon" data-open="books" title="すきなほん">
+            <img src="assets/books.png" alt="すきなほん" />
+          </button>
+          <button class="task-icon" data-open="works" title="わーくす">
+            <img src="assets/works.png" alt="わーくす" />
+          </button>
+          <button class="task-icon" data-open="music" title="すきなおんがく">
+            <img src="assets/music.png" alt="すきなおんがく" />
+          </button>
+          <button class="task-icon" data-open="contact" title="こんたくと">
+            <img src="assets/contact.png" alt="こんたくと" />
+          </button>
+        </div>
+      </nav>
     </main>
 
     <script src="js/data.js"></script>

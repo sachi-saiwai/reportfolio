@@ -111,6 +111,10 @@ body {
   padding: 14px 24px 24px;
   opacity: 0;
   transition: opacity 600ms ease 200ms;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.6), transparent 38%),
+    radial-gradient(circle at 82% 78%, rgba(255, 138, 200, 0.4), transparent 45%),
+    linear-gradient(160deg, #ffeaf6 0%, #ffd3ec 55%, #ffbfe2 100%);
 }
 
 .os.is-visible {
@@ -125,15 +129,37 @@ body {
   letter-spacing: 0.02em;
 }
 
-.window {
+/* ステージ: デスクトップ(背景) と ウィンドウ(前面) を重ねる場所 */
+.stage {
+  position: relative;
   flex: 1;
   min-height: 0;
+}
+
+.window {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   background: #ffe6f4;
   border: 1px solid rgba(255, 120, 190, 0.35);
   box-shadow: 0 18px 50px rgba(187, 29, 110, 0.16);
   overflow: hidden;
+  transition: inset 320ms ease, border-radius 320ms ease,
+    opacity 240ms ease, transform 240ms ease;
+}
+
+/* ホーム(閉じている)状態: ウィンドウを隠してデスクトップを見せる */
+.window.is-hidden {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+
+/* □ を押したときの小さいウィンドウ表示(背景のデスクトップが見える) */
+.os.is-windowed .window {
+  inset: 6% 12%;
+  border-radius: 14px;
 }
 
 .titlebar {
@@ -221,6 +247,67 @@ body {
   border-radius: 99px;
 }
 
+/* ---- taskbar / dock ---- */
+.taskbar {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.taskbar-inner {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(10px, 1.6vw, 18px);
+  padding: 8px clamp(12px, 1.6vw, 18px);
+  background: rgba(255, 230, 244, 0.85);
+  border: 1px solid rgba(255, 120, 190, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(187, 29, 110, 0.18);
+  backdrop-filter: blur(8px);
+}
+
+.task-icon {
+  position: relative;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 2px 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-icon img {
+  width: clamp(34px, 4.4vw, 46px);
+  height: clamp(34px, 4.4vw, 46px);
+  object-fit: contain;
+  image-rendering: pixelated;
+  transition: transform 160ms ease;
+}
+
+.task-icon:hover img {
+  transform: translateY(-8px) scale(1.15);
+}
+
+.task-icon::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: #ff5fae;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.task-icon.is-open::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* ---- views ---- */
 .view {
   display: none;
@@ -235,8 +322,11 @@ body {
   to { opacity: 1; transform: none; }
 }
 
-/* ---- desktop (home) ---- */
+/* ---- desktop (背景・常に表示) ---- */
 .desktop {
+  position: absolute;
+  inset: 0;
+  padding: clamp(16px, 3vw, 36px);
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: repeat(5, auto);

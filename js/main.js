@@ -52,11 +52,25 @@ const labels = {
   contact: "contact",
 };
 
+const taskIcons = [...document.querySelectorAll(".task-icon")];
+const windowEl = document.querySelector("[data-window]");
+
 const showView = (name) => {
-  views.forEach((v) => v.classList.toggle("is-active", v.dataset.view === name));
-  backBtn.classList.toggle("is-shown", name !== "home");
+  const isHome = name === "home";
+
+  // ホーム = ウィンドウを閉じてデスクトップ(背景)だけ表示
+  windowEl.classList.toggle("is-hidden", isHome);
+  backBtn.classList.toggle("is-shown", !isHome);
   osLabel.textContent = labels[name] || "Home";
-  document.querySelector(".win-body").scrollTop = 0;
+
+  if (!isHome) {
+    views.forEach((v) => v.classList.toggle("is-active", v.dataset.view === name));
+    document.querySelector(".win-body").scrollTop = 0;
+  }
+
+  taskIcons.forEach((t) =>
+    t.classList.toggle("is-open", t.dataset.open === name && !isHome)
+  );
 };
 
 document.querySelectorAll("[data-open]").forEach((btn) => {
@@ -66,6 +80,11 @@ backBtn.addEventListener("click", () => showView("home"));
 document
   .querySelectorAll("[data-home]")
   .forEach((b) => b.addEventListener("click", () => showView("home")));
+
+/* □ ボタン: ウィンドウ表示 ⇔ 最大化 */
+document.querySelector("[data-max]").addEventListener("click", () => {
+  osShell.classList.toggle("is-windowed");
+});
 
 /* ============================================================
    RENDER: WORKS / MUSIC / BOOKS
