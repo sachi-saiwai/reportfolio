@@ -7,6 +7,7 @@ const WORKS = [
     desc: "絵画作品における参加者の視線や感情を可視化するARwebアプリ。",
     tech: ["React 19", "TypeScript", "MindAR", "Firebase"],
   },
+  /*
   {
     name: "katatsumuri",
     url: "https://katatsumuri.vercel.app/",
@@ -25,6 +26,7 @@ const WORKS = [
     desc: "Flutterで作ったクロスプラットフォームアプリ。",
     tech: ["Flutter", "Dart"],
   },
+  */
   {
     name: "portfoliogogogo",
     url: "https://pgo-p5.com/",
