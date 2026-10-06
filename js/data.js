@@ -1,6 +1,13 @@
 /* ===== わーくす（GitHub: sachi-saiwai / t0rixs） ===== */
 const WORKS = [
   {
+    name: "KASHIKA",
+    route: "works/kashika",
+    url: "https://kashika-d3cf5.web.app/",
+    desc: "絵画作品における参加者の視線や感情を可視化するARwebアプリ。",
+    tech: ["React 19", "TypeScript", "MindAR", "Firebase"],
+  },
+  {
     name: "katatsumuri",
     url: "https://katatsumuri.vercel.app/",
     desc: "ブラウザで動くドット絵エディタ。",
