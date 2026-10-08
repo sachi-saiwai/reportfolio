@@ -1,6 +1,20 @@
 /* ===== わーくす（GitHub: sachi-saiwai / t0rixs） ===== */
 const WORKS = [
   {
+    name: "資格更新ノート",
+    route: "works/med-dad",
+    url: "https://med-dad.vercel.app/",
+    desc: "専門医資格の管理アプリ",
+    tech: ["Flutter", "Dart", "TypeScript", "Neon PostgreSQL"],
+  },
+  {
+    name: "メッセージウィンドウジェネレーター",
+    route: "works/message-window-generator",
+    url: "https://sachi-saiwai.github.io/novelgame_gokko/",
+    desc: "ノベルゲーム等で登場キャラクターの発言内容が記されるメッセージウィンドウのジェネレーター",
+    tech: ["Flutter Web", "Dart"],
+  },
+  {
     name: "KASHIKA",
     route: "works/kashika",
     url: "https://kashika-d3cf5.web.app/",
@@ -28,16 +42,18 @@ const WORKS = [
   },
   */
   {
-    name: "portfoliogogogo",
-    url: "https://pgo-p5.com/",
-    desc: "Flutter製のポートフォリオ",
-    tech: ["Flutter", "Dart"],
+    name: "PocketReception",
+    route: "works/pocketreception",
+    url: "https://github.com/t0rixs/PocketReception",
+    desc: "図書館の蔵書管理とスマートフォンによる貸出・返却手続きを支援するwebアプリ。",
+    tech: ["Flutter", "Dart", "Supabase"],
   },
   {
-    name: "pocketreception",
-    url: "https://github.com/t0rixs/PocketReception",
-    desc: "Flutterで共同開発した図書業務DX化アプリ。",
-    tech: ["Flutter", "Dart"],
+    name: "portfolio",
+    route: "works/portfolio",
+    url: "https://pgo-p5.com/",
+    desc: "ポートフォリオサイト",
+    tech: ["Flutter 3.24", "Dart 3.5", "Material Design"],
   },
 ];
 

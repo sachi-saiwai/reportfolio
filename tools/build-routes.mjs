@@ -1,7 +1,7 @@
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 const root = new URL('../', import.meta.url);
 const html = readFileSync(new URL('index.html', root), 'utf8');
-for (const route of ['about', 'works', 'works/kashika', 'music', 'books', 'contact']) {
+for (const route of ['about', 'works', 'works/med-dad', 'works/message-window-generator', 'works/kashika', 'works/portfolio', 'works/pocketreception', 'music', 'books', 'contact']) {
   const dir = new URL(`${route}/`, root);
   mkdirSync(dir, { recursive: true });
   const base = '../'.repeat(route.split('/').length);

@@ -123,6 +123,87 @@
             </div>
           </section>
 
+          <!-- MED DAD -->
+          <section class="view" data-view="med-dad" aria-labelledby="med-dad-title">
+            <h1 class="page-title" id="med-dad-title" tabindex="-1">資格更新ノート</h1>
+            <p class="work-detail-subtitle">専門医資格の管理アプリ</p>
+            <div class="work-detail-layout">
+              <div class="work-detail-preview">
+                <a href="https://med-dad.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="資格更新ノートを新しいタブで開く">
+                  <img src="assets/med-dad.jpg" alt="資格更新ノートの画面。保有資格と取得単位、参加証の登録状況を一覧で表示。" width="1170" height="2391" />
+                </a>
+              </div>
+              <div class="work-detail-text">
+              <section>
+                <h2>取り組んだテーマ</h2>
+                <p>twogatedevcamp2026に個人参加して、<strong>あなたが深く知る一人の、困りごとを解く</strong>というテーマのもとに外科医である父の困りごと、専門医資格の管理ができるwebアプリを開発しました。父にアプリ開発やデザインの知識がなく、思い描いているもののヒアリングには苦労しましたが、複数の案を作成してそこからそれがイメージに近いか選んでもらったり他の機能が欲しいなどアドバイスをもらうことで父の理想に近いものができたのではないかと考えています。</p>
+              </section>
+              <section>
+                <h2>サービス概要</h2>
+                <p>複数ありそれぞれ更新期間や更新条件が違う専門医資格をまとめて管理できるようになるアプリです。</p>
+                <p>複数の資格について、更新期限・必要単位・研修実績・参加証を整理し、資格ごとの取得状況や不足している条件を確認できます。資格の有効期限、単位の算入期限、更新申請の締切をそれぞれ分けて管理できる点も特徴です。</p>
+                <p>参加証の画像やPDFを取り込むと、AIが研修名・開催日・主催者・単位数などを抽出し、利用者が内容を確認して登録できます。一つの研修実績に対して複数資格への単位の割り当てを設定できるほか、今後参加する研修も登録し、取得済みの単位と取得予定の単位を分けて把握できます。</p>
+                <p>更新期限が近づいた際の通知に加え、申請準備用の情報をまとめたPDFや、参加証を同梱したZIPの出力にも対応しています。スマートフォンのホーム画面に追加して利用でき、登録データのクラウド同期やバックアップ・復元も行えます。</p>
+              </section>
+              <section>
+                <h2>使用技術</h2>
+                <dl class="work-detail-tech">
+<div class="work-tech-group"><dt>フロントエンド</dt><dd>Flutter、Dart<small class="work-tech-purpose">アプリの画面・操作の実装</small></dd></div>
+<div class="work-tech-group"><dt>バックエンド</dt><dd>TypeScript、Node.js、Vercel Functions<small class="work-tech-purpose">データ同期や各種APIの処理</small></dd></div>
+<div class="work-tech-group"><dt>データベース</dt><dd>Neon PostgreSQL<small class="work-tech-purpose">資格・研修実績・更新条件などの保存</small></dd></div>
+<div class="work-tech-group"><dt>認証</dt><dd>Firebase Authentication<small class="work-tech-purpose">Googleアカウントによるログイン</small></dd></div>
+<div class="work-tech-group"><dt>ファイル保存</dt><dd>Vercel Blob<small class="work-tech-purpose">参加証・公式資料・バックアップの非公開保存</small></dd></div>
+<div class="work-tech-group"><dt>AI</dt><dd>OpenAI Responses API<small class="work-tech-purpose">参加証から研修名・開催日・単位などを抽出</small></dd></div>
+<div class="work-tech-group"><dt>端末内OCR</dt><dd>Apple Vision（iOS）、Google ML Kit（Android）<small class="work-tech-purpose">画像・PDFの文字認識</small></dd></div>
+<div class="work-tech-group"><dt>通知・定期処理</dt><dd>Web Push、Vercel Cron<small class="work-tech-purpose">更新期限の通知、公式資料の定期取得</small></dd></div>
+<div class="work-tech-group"><dt>PWA・ホスティング</dt><dd>Service Worker、Vercel</dd></div>
+                </dl>
+              </section>
+              <a class="work-detail-link" href="https://med-dad.vercel.app/" target="_blank" rel="noopener noreferrer">資格更新ノートを開く ↗</a>
+            </div>
+            </div>
+            <section class="work-detail-text work-detail-single work-award">
+              <h2>追記</h2>
+              <p>twogatedevcamp2026では審査員特別賞をいただきました！</p>
+              <img src="assets/med-dad-award.jpg" alt="TwoGate DevCamp 2026の審査員特別賞の賞状" width="2461" height="1876" />
+            </section>
+          </section>
+
+          <!-- MESSAGE WINDOW GENERATOR -->
+          <section class="view" data-view="message-window-generator" aria-labelledby="message-window-generator-title">
+            <h1 class="page-title generator-title" id="message-window-generator-title" tabindex="-1">メッセージウィンドウジェネレーター</h1>
+            <p class="work-detail-subtitle work-detail-single">ノベルゲーム等で登場キャラクターの発言内容が記されるメッセージウィンドウのジェネレーター</p>
+            <div class="work-detail-layout">
+              <div class="work-detail-preview">
+                <a href="https://sachi-saiwai.github.io/novelgame_gokko/" target="_blank" rel="noopener noreferrer" aria-label="メッセージウィンドウジェネレーターを新しいタブで開く">
+                  <img src="assets/message-window-generator.png" alt="メッセージウィンドウジェネレーターの画面。イラストに名前とセリフを重ね、入力欄で編集できます。" width="3420" height="2130" />
+                </a>
+              </div>
+              <div class="work-detail-text">
+              <section>
+                <h2>取り組んだテーマ</h2>
+                <p>ノベルゲームの文化が好きで、自分の書いた絵などでノベルゲームのスクリーンショットのような雰囲気の画像を作れたら楽しいのではないかと思い立ち、可愛らしくて使いやすいメッセージウィンドウのジェネレーターをテーマに作成しました。</p>
+              </section>
+              <section>
+                <h2>サービス概要</h2>
+                <p>好きな写真やイラストに名前とセリフを重ね、ノベルゲームのワンシーンのような画像を作成できるWebアプリです。入力内容をプレビューで確認しながら編集でき、クリックで2つのセリフを切り替える演出にも対応しています。作成した場面はPNG画像として保存・共有できます。</p>
+              </section>
+              <section>
+                <h2>使用技術</h2>
+                <dl class="work-detail-tech">
+                  <div class="work-tech-group"><dt>フロントエンド</dt><dd>Flutter Web、Dart<small class="work-tech-purpose">画面・操作の実装</small></dd></div>
+                  <div class="work-tech-group"><dt>画像読み込み</dt><dd>file_picker<small class="work-tech-purpose">端末から写真・イラストを選択</small></dd></div>
+                  <div class="work-tech-group"><dt>画像合成・書き出し</dt><dd>RepaintBoundary、dart:ui<small class="work-tech-purpose">画像とメッセージウィンドウを合成し、PNGへ変換</small></dd></div>
+                  <div class="work-tech-group"><dt>フォント</dt><dd>google_fonts（DotGothic16）<small class="work-tech-purpose">ゲームらしいドット調の文字表現</small></dd></div>
+                  <div class="work-tech-group"><dt>アニメーション</dt><dd>AnimationController、AnimatedBuilder<small class="work-tech-purpose">セリフ送りマークの点滅</small></dd></div>
+                  <div class="work-tech-group"><dt>保存・共有</dt><dd>Web Share API、package:web、dart:js_interop<small class="work-tech-purpose">共有メニューの呼び出し、画像ダウンロード</small></dd></div>
+                </dl>
+              </section>
+              <a class="work-detail-link" href="https://sachi-saiwai.github.io/novelgame_gokko/" target="_blank" rel="noopener noreferrer">メッセージウィンドウジェネレーターを開く ↗</a>
+            </div>
+            </div>
+          </section>
+
           <!-- KASHIKA -->
           <section class="view" data-view="kashika" aria-labelledby="kashika-title">
             <h1 class="page-title" id="kashika-title" tabindex="-1">KASHIKA</h1>
@@ -153,6 +234,58 @@
                   </dl>
                 </section>
               </div>
+            </div>
+          </section>
+
+          <!-- PORTFOLIO -->
+          <section class="view" data-view="portfolio" aria-labelledby="portfolio-title">
+            <h1 class="page-title" id="portfolio-title" tabindex="-1">portfolio</h1>
+            <p class="work-detail-subtitle">ポートフォリオサイト</p>
+            <div class="work-detail-layout">
+              <div class="work-detail-preview">
+                <a href="https://pgo-p5.com/" target="_blank" rel="noopener noreferrer" aria-label="portfolioを新しいタブで開く">
+                  <img src="assets/portfolio.png" alt="portfolioの画面。黒い背景にピンクのくまとMy portfolioのタイトル。" width="3420" height="2214" />
+                </a>
+              </div>
+              <div class="work-detail-text">
+              <section>
+                <h2>取り組んだテーマ</h2>
+                <p>プログラミング頑張ろう！と思ってdartを使って0から手書きで全部書きました。簡素でお世辞にも出来がいいとは言えませんが法則性に従って文字書いて行ったらwebってできるんだ！って思えてすごく楽しかったです。</p>
+              </section>
+              <section>
+                <h2>使用技術</h2>
+                <div class="work-tech-group">Flutter 3.24, Dart 3.5, Material Design</div>
+              </section>
+              <a class="work-detail-link" href="https://pgo-p5.com/" target="_blank" rel="noopener noreferrer">portfolioを開く ↗<br><small>pgo-p5.com</small></a>
+            </div>
+            </div>
+          </section>
+
+          <!-- POCKETRECEPTION -->
+          <section class="view" data-view="pocketreception" aria-labelledby="pocketreception-title">
+            <h1 class="page-title pocket-title" id="pocketreception-title" tabindex="-1">PocketReception</h1>
+            <p class="work-detail-subtitle work-detail-single">図書館の蔵書管理とスマートフォンによる貸出・返却手続きを支援するwebアプリ。</p>
+            <div class="work-detail-text work-detail-single">
+              <section>
+                <h2>取り組んだテーマ</h2>
+                <p>友人と参加したハッカソンで、司書業務の効率化をテーマにwebアプリを開発しました。司書の確認を前提として業務内容の中でも大きな割合を占めている貸出・返却を図書館利用者に担ってもらうという形での業務効率化webアプリを目指しました。</p>
+              </section>
+              <section>
+                <h2>サービス概要</h2>
+                <p>図書館の貸出・返却手続きをスマートフォンで行える蔵書管理アプリです。利用者は本のバーコードを読み取って貸出手続きを行い、返却時には本の表紙・裏表紙・棚に戻した位置を撮影して申請します。管理者は写真から本の状態や収納場所を確認し、返却を承認できます。ISBNからの書籍情報の自動取得や貸出状況の管理にも対応し、利用者の手続きと図書館の運営業務を支援します。</p>
+              </section>
+              <section>
+                <h2>使用技術</h2>
+                <dl class="work-detail-tech">
+                    <div class="work-tech-group"><dt>フロントエンド</dt><dd>Flutter、Dart</dd></div>
+                    <div class="work-tech-group"><dt>状態管理・画面遷移</dt><dd>Provider、go_router</dd></div>
+                    <div class="work-tech-group"><dt>バックエンド</dt><dd>Supabase（PostgreSQL・Auth・Storage）</dd></div>
+                    <div class="work-tech-group"><dt>バーコード読み取り</dt><dd>mobile_scanner</dd></div>
+                    <div class="work-tech-group"><dt>撮影・画像処理</dt><dd>camera、image</dd></div>
+                    <div class="work-tech-group"><dt>外部API</dt><dd>Google Books API</dd></div>
+                </dl>
+              </section>
+              <a class="work-detail-link" href="https://github.com/t0rixs/PocketReception" target="_blank" rel="noopener noreferrer">GitHubでPocketReceptionを見る ↗</a>
             </div>
           </section>
 

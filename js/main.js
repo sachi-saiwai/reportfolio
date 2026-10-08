@@ -50,19 +50,24 @@ const labels = {
   music: "likemusic",
   books: "likebooks",
   contact: "contact",
+  "med-dad": "資格更新ノート",
+  "message-window-generator": "メッセージウィンドウジェネレーター",
   kashika: "KASHIKA",
+  portfolio: "portfolio",
+  pocketreception: "PocketReception",
 };
 
 const taskIcons = [...document.querySelectorAll(".task-icon")];
 const windowEl = document.querySelector("[data-window]");
 
+const isWorkDetail = (name) => ["med-dad", "message-window-generator", "kashika", "portfolio", "pocketreception"].includes(name);
 let currentView = "home";
 
 const showView = (name) => {
   currentView = name;
   const isHome = name === "home";
   document.title = isHome ? "portfolio" : `${labels[name]} | portfolio`;
-  backBtn.setAttribute("aria-label", name === "kashika" ? "Worksに戻る" : "ホームに戻る");
+  backBtn.setAttribute("aria-label", isWorkDetail(name) ? "Worksに戻る" : "ホームに戻る");
 
   // ホーム = ウィンドウを閉じてデスクトップ(背景)だけ表示
   windowEl.classList.toggle("is-hidden", isHome);
@@ -75,13 +80,13 @@ const showView = (name) => {
   }
 
   taskIcons.forEach((t) =>
-    t.classList.toggle("is-open", t.dataset.open === (name === "kashika" ? "works" : name) && !isHome)
+    t.classList.toggle("is-open", t.dataset.open === (isWorkDetail(name) ? "works" : name) && !isHome)
   );
 };
 
 // Resolve routes relative to the site root, including deployments in a subdirectory.
 const siteBase = new URL(".", document.baseURI);
-const routeViews = { "": "home", about: "about", works: "works", "works/kashika": "kashika", music: "music", books: "books", contact: "contact" };
+const routeViews = { "": "home", about: "about", works: "works", "works/med-dad": "med-dad", "works/message-window-generator": "message-window-generator", "works/kashika": "kashika", "works/portfolio": "portfolio", "works/pocketreception": "pocketreception", music: "music", books: "books", contact: "contact" };
 const navigate = (route) => {
   const url = new URL(route || "./", siteBase);
   if (location.pathname !== url.pathname) history.pushState(null, "", url);
@@ -97,7 +102,7 @@ restoreRoute();
 document.querySelectorAll("[data-open]").forEach((btn) => {
   btn.addEventListener("click", () => navigate(btn.dataset.open));
 });
-backBtn.addEventListener("click", () => navigate(currentView === "kashika" ? "works" : ""));
+backBtn.addEventListener("click", () => navigate(isWorkDetail(currentView) ? "works" : ""));
 document
   .querySelectorAll("[data-home]")
   .forEach((b) => b.addEventListener("click", () => navigate("")));
@@ -126,7 +131,7 @@ document.querySelector("[data-works]").addEventListener("click", (event) => {
   if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
   navigate(link.dataset.route);
-  document.querySelector("#kashika-title").focus({ preventScroll: true });
+  document.querySelector(`[data-view="${currentView}"] .page-title`).focus({ preventScroll: true });
 });
 
 document.querySelector("[data-music]").innerHTML = MUSIC.map(
